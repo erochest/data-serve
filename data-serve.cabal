@@ -33,7 +33,12 @@ Executable data-serve
     snap-loader-static        >= 0.9     && < 0.10,
     text                      >= 0.11    && < 1.2,
     time                      >= 1.1     && < 1.5,
-    xmlhtml                   >= 0.1
+    xmlhtml                   >= 0.1,
+    transformers,
+    postgresql-simple,
+    snaplet-postgresql-simple,
+    resource-pool-catchio,
+    heroku
 
   if flag(old-base)
     build-depends:

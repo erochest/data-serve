@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS internet_users;
+
 CREATE TABLE IF NOT EXISTS internet_users
 (
     id           SERIAL      PRIMARY KEY,
@@ -6,7 +8,7 @@ CREATE TABLE IF NOT EXISTS internet_users
     ser_code     VARCHAR(15) NOT NULL,
     ser_name     VARCHAR(40) NOT NULL,
     year         CHAR(4)     NOT NULL,
-    value        INTEGER     DEFAULT NULL
+    value        REAL        DEFAULT NULL
 );
 
 COPY internet_users

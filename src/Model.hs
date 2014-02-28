@@ -31,7 +31,7 @@ data InternetUser = InternetUser
                   , _internetUserSerCode     :: T.Text
                   , _internetUserSerName     :: T.Text
                   , _internetUserYear        :: T.Text
-                  , _internetUserCount       :: Int
+                  , _internetUserCount       :: Double
                   } deriving (Show)
 makeLenses ''InternetUser
 

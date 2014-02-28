@@ -19,6 +19,28 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-links">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">Internet Users Data</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-links">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://data.worldbank.org/">World Bank Data</a></li>
+              <li class="divider"></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div id="content">
 
       <apply-content/>

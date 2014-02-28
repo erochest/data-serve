@@ -40,6 +40,7 @@ import           Form
 routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop (redirect "/form") <|> serveDirectory "static")
          , ("/form", with pg runDataViewForm)
+         , ("/about", render "about/index")
          ]
 
 

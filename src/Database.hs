@@ -14,7 +14,6 @@ import           Data.Pool
 import qualified Data.Text                     as T
 import           Data.Word
 import           Database.PostgreSQL.Simple
-import           Debug.Trace
 import           Snap.Snaplet
 import           Snap.Snaplet.PostgresqlSimple
 
@@ -43,7 +42,6 @@ readConfig params =   ConnectInfo
 
 initHelper :: (Functor m, MonadIO m) => [(T.Text, T.Text)] -> m Postgres
 initHelper config = do
-    traceShow config $ return ()
     conn <- maybe (fail "Invalid configuration") return $ readConfig config
     fmap Postgres . liftIO $ createPool (connect conn) close stripes
                                         (realToFrac (idle :: Double))

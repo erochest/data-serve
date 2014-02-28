@@ -9,31 +9,37 @@ module Site
   ) where
 
 ------------------------------------------------------------------------------
-import           Control.Applicative
-import           Control.Monad
+-- import           Control.Applicative
+-- import           Control.Monad
 import           Control.Monad.IO.Class
 import           Data.ByteString                             (ByteString)
-import           Data.Pool
-import qualified Data.Text                                   as T
-import           Database.PostgreSQL.Simple
-import           Heist
-import qualified Heist.Interpreted                           as I
-import           Snap.Core
-import           Snap.Snaplet
+-- import           Data.Pool
+-- import qualified Data.Text                                   as T
+-- import           Database.PostgreSQL.Simple
+-- import           Heist
+-- import qualified Heist.Interpreted                           as I
+-- import           Snap.Core
+import           Snap
 import           Snap.Snaplet.Heist
-import           Snap.Snaplet.PostgresqlSimple
+-- import           Snap.Snaplet.PostgresqlSimple
 import           Snap.Snaplet.Session.Backends.CookieSession
 import           Snap.Util.FileServe
+-- import           Text.Digestive
+-- import           Text.Digestive.Heist
+-- import           Text.Digestive.Snap
 import           Web.Heroku
 ------------------------------------------------------------------------------
 import           Application
 import           Database
+import           Form
+-- import           Model
 
 
 ------------------------------------------------------------------------------
 -- | The application's routes.
 routes :: [(ByteString, Handler App App ())]
-routes = [ ("", serveDirectory "static")
+routes = [ ("", ifTop (redirect "/form") <|> serveDirectory "static")
+         , ("/form", with pg runDataViewForm)
          ]
 
 
@@ -48,5 +54,4 @@ app = makeSnaplet "app" "An snaplet example application." Nothing $ do
 
     addRoutes routes
     return $ App h s p
-
 

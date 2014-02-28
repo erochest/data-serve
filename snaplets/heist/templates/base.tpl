@@ -41,7 +41,7 @@
         </div>
       </nav>
     </header>
-    <div id="content">
+    <div id="content" class="container">
 
       <apply-content/>
 

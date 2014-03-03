@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE RecordWildCards   #-}
 
 
 module Form
@@ -36,7 +37,12 @@ runDataViewForm = do
     (view, result) <- runForm "data"
                    .  dataViewForm
                    $  mapMaybe listToMaybe countries
-    case result of
-        Just _ -> undefined
-        Nothing -> heistLocal (bindDigestiveSplices view) $ render "country_name_form"
+    maybe (renderForm view) renderDataView result
+
+renderDataView :: DataView -> Handler App Postgres ()
+renderDataView = undefined
+
+renderForm :: View T.Text -> Handler App Postgres ()
+renderForm view =
+    heistLocal (bindDigestiveSplices view) $ render "country_name_form"
 

@@ -1,6 +1,6 @@
 <apply template="base">
   <div class="form-group">
-    <dfForm action="/data" method="get">
+    <dfForm action="/data" method="post">
       <dfChildErrorList ref=""/>
 
       <dfLabel ref="country">Country: </dfLabel>

@@ -15,8 +15,10 @@ module Model
     ) where
 
 
+import           Control.Applicative
 import           Control.Lens
-import qualified Data.Text    as T
+import qualified Data.Text                     as T
+import           Snap.Snaplet.PostgresqlSimple
 
 
 data DataView = DataView
@@ -31,7 +33,17 @@ data InternetUser = InternetUser
                   , _internetUserSerCode     :: T.Text
                   , _internetUserSerName     :: T.Text
                   , _internetUserYear        :: T.Text
-                  , _internetUserCount       :: Double
+                  , _internetUserCount       :: Maybe Double
                   } deriving (Show)
 makeLenses ''InternetUser
+
+instance FromRow InternetUser where
+    fromRow =   InternetUser
+            <$> field
+            <*> field
+            <*> field
+            <*> field
+            <*> field
+            <*> field
+            <*> field
 

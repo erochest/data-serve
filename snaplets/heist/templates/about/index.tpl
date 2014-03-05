@@ -12,4 +12,8 @@
   <p>NB: The data in this is <strong>the number of Internet users per 100
   people</strong>.</p>
 
+  <p>There are also <a
+  href="http://www.ericrochester.com/data-serve/">slides</a> for this
+  presentation.</p>
+
 </apply>

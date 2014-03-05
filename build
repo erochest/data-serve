@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# THEME=beige
+# THEME=blood
+# THEME=default
+# THEME=moon
+# THEME=night
+# THEME=serif
+# THEME=simple
+# THEME=sky
+THEME=solarized
+
+pandoc --to=revealjs --standalone --smart --output=index.html -V theme=$THEME index.md
+open index.html
+

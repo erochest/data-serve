@@ -1,4 +1,5 @@
 <apply template="base">
+  <pager/>
   <table class="table table-hover table-condensed table-responsive">
     <thead>
       <tr>
@@ -16,4 +17,5 @@
       </iusers>
     </tbody>
   </table>
+  <pager/>
 </apply>

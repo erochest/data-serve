@@ -10,6 +10,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
     <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+    </style>
     <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
   <link rel="stylesheet" media="print" href="reveal.js/css/print/pdf.css" />
   <!--[if lt IE 9]>
@@ -27,7 +46,119 @@
 </section>
 
 <section><section id="about-the-scholars-lab" class="titleslide slide level1"><h1>About the Scholars’ Lab</h1></section></section>
-<section><section id="introduction-to-screen-scraping" class="titleslide slide level1"><h1>Introduction to Screen Scraping</h1></section></section>
+<section><section id="introduction-to-screen-scraping" class="titleslide slide level1"><h1>Introduction to Screen Scraping</h1></section><section id="for-today" class="slide level2">
+<h1>For Today</h1>
+<ul>
+<li>Overview</li>
+<li>Process</li>
+<li>A few tools</li>
+<li>A quick example</li>
+</ul>
+</section></section>
+<section><section id="what-is-it" class="titleslide slide level1"><h1>What is It?</h1></section></section>
+<section><section id="caveats" class="titleslide slide level1"><h1>Caveats</h1></section><section id="legal-issues" class="slide level2">
+<h1>Legal Issues</h1>
+<p>Read the fine print.</p>
+<p>Wikipedia has a nice overview on the <a href="http://en.wikipedia.org/wiki/Web_scraping#Legal_issues">Web Scraping article</a>.</p>
+</section><section id="not-always-possible" class="slide level2">
+<h1>Not Always Possible</h1>
+</section></section>
+<section><section id="levels-of-accessibility" class="titleslide slide level1"><h1>Levels of Accessibility</h1></section><section id="downloadable" class="slide level2">
+<h1>Downloadable</h1>
+<ul>
+<li>Comma-separated-values</li>
+<li>JSON</li>
+<li>Excel</li>
+</ul>
+</section><section id="html" class="slide level2">
+<h1>HTML</h1>
+</section><section id="inaccessible" class="slide level2">
+<h1>Inaccessible</h1>
+<p>Looking at you, Flash</p>
+<p>And you, PDF</p>
+</section></section>
+<section><section id="tools" class="titleslide slide level1"><h1>Tools</h1></section><section id="python" class="slide level2">
+<h1>Python</h1>
+<p><a href="http://www.python.org/">http://www.python.org/</a></p>
+</section><section id="requests" class="slide level2">
+<h1>Requests</h1>
+<p><a href="http://docs.python-requests.org/en/latest/">http://docs.python-requests.org/en/latest/</a></p>
+</section><section id="lxml-or-beautifulsoup" class="slide level2">
+<h1>lxml or BeautifulSoup</h1>
+<ul>
+<li><a href="http://lxml.de/index.html">http://lxml.de/index.html</a></li>
+<li><a href="http://www.crummy.com/software/BeautifulSoup/">http://www.crummy.com/software/BeautifulSoup/</a></li>
+</ul>
+</section><section id="or-almost-any-other-programming-language" class="slide level2">
+<h1>Or Almost Any Other Programming Language</h1>
+</section><section id="your-browser" class="slide level2">
+<h1>Your Browser!</h1>
+<p><a href="http://www.google.com/chrome/">Chrome</a> and <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> both come with lots of tools.</p>
+</section></section>
+<section><section id="the-example-today" class="titleslide slide level1"><h1>The Example Today</h1></section><section id="internet-users" class="slide level2">
+<h1>Internet Users</h1>
+<p><a href="http://ancient-shore-4835.herokuapp.com/">http://ancient-shore-4835.herokuapp.com/</a></p>
+</section></section>
+<section><section id="how-to-approach-the-problem" class="titleslide slide level1"><h1>How to Approach the Problem</h1></section><section id="think-about-how-you-get-to-the-data" class="slide level2">
+<h1>Think about How You Get to the Data</h1>
+</section><section id="duplicate-that" class="slide level2">
+<h1>Duplicate That!</h1>
+</section><section id="look-for-one-entry-point" class="slide level2">
+<h1>Look for One Entry Point</h1>
+</section><section id="branch-off" class="slide level2">
+<h1>Branch off</h1>
+</section></section>
+<section><section id="lets-explore" class="titleslide slide level1"><h1>Let’s Explore</h1></section><section id="main-page" class="slide level2">
+<h1>Main Page</h1>
+</section><section id="form-to-subdivide-the-data" class="slide level2">
+<h1>Form to Subdivide the Data</h1>
+</section><section id="data-in-table" class="slide level2">
+<h1>Data in Table</h1>
+</section><section id="paginated" class="slide level2">
+<h1>Paginated</h1>
+</section></section>
+<section><section id="i-want-to-go-there" class="titleslide slide level1"><h1>I Want to Go There</h1></section><section id="not-a-tutorial-on-python" class="slide level2">
+<h1>Not a Tutorial on Python</h1>
+</section><section id="download-all-the-things" class="slide level2">
+<h1>Download All the Things!</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get(url, params=<span class="ot">None</span>):
+    <span class="co">&quot;&quot;&quot;A basic utility to get and parse a web page.&quot;&quot;&quot;</span>
+    req = requests.get(url, params=params)
+    doc = lxml.html.fromstring(req.text)
+    <span class="kw">return</span> doc</code></pre>
+</section><section id="world-traveller" class="slide level2">
+<h1>World Traveller</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_countries(base_url, doc):
+    <span class="co">&quot;&quot;&quot;Takes the document and returns (country, country_value).&quot;&quot;&quot;</span>
+    <span class="kw">for</span> select in doc.cssselect(<span class="st">&#39;form select&#39;</span>):
+        <span class="kw">if</span> select.get(<span class="st">&#39;name&#39;</span>) == COUNTRY:
+            <span class="kw">for</span> option in select.cssselect(<span class="st">&#39;option&#39;</span>):
+                <span class="kw">yield</span> (option.text, option.get(<span class="st">&#39;value&#39;</span>))</code></pre>
+</section><section id="on-the-table" class="slide level2">
+<h1>On the Table</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> get_country_data(url, country_code, page=<span class="dv">0</span>):
+    <span class="co">&quot;&quot;&quot;Page through the data for one country.&quot;&quot;&quot;</span>
+    doc = get(url, {PAGE: page, COUNTRY: country_code})
+
+    <span class="co"># Get the data for the current page, counting it as we go.</span>
+    n = <span class="dv">0</span>
+    <span class="kw">for</span> table_row in doc.cssselect(<span class="st">&#39;table tbody tr&#39;</span>):
+        n += <span class="dv">1</span>
+        <span class="kw">yield</span> <span class="dt">tuple</span>( td.text <span class="kw">for</span> td in table_row.cssselect(<span class="st">&#39;td&#39;</span>) )
+
+    <span class="co"># If this page has data, see if the next does too.</span>
+    <span class="kw">if</span> n &gt; <span class="dv">0</span>:
+        <span class="kw">for</span> row in get_country_data(url, country_code, page + <span class="dv">1</span>):
+            <span class="kw">yield</span> row</code></pre>
+</section><section id="but-thats-not-all" class="slide level2">
+<h1>But That’s not All</h1>
+<p>See <a href="https://github.com/erochest/data-serve/blob/master/scraper.py">the full source</a>.</p>
+</section></section>
+<section><section id="where-to-go-from-here" class="titleslide slide level1"><h1>Where to Go from Here</h1></section><section id="this-presentation-with-links" class="slide level2">
+<h1>This Presentation (with Links)</h1>
+<p><a href="http://www.ericrochester.com/data-serve/">http://www.ericrochester.com/data-serve/</a></p>
+</section></section>
+<section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
     </div>
   </div>
 

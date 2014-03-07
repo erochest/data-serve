@@ -142,6 +142,16 @@ See [the full source][source].
 
 [http://www.ericrochester.com/data-serve/][this]
 
+## More Links
+
+* [Python][python]
+* [Learn Python the Hard Way][hardway]
+* [Python Package Index][pypi] (PyPI, the collection of Python libraries)
+* [Requests][requests] library for getting web pages
+* [lxml][lxml] library for digging into web pages
+* [Web Platform][webplatform] information, references, and tutorials about the
+  technologies that power the web.
+
 # Questions?
 
 [legal]: http://en.wikipedia.org/wiki/Web_scraping#Legal_issues
@@ -155,3 +165,6 @@ See [the full source][source].
 [eg]: http://ancient-shore-4835.herokuapp.com/
 [this]: http://www.ericrochester.com/data-serve/
 [source]: https://github.com/erochest/data-serve/blob/master/scraper.py
+[hardway]: http://learnpythonthehardway.org/
+[pypi]: https://pypi.python.org/pypi
+[webplatform]: http://www.webplatform.org/

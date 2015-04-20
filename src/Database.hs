@@ -6,8 +6,6 @@ module Database
     ) where
 
 
-import           Control.Applicative
-import           Control.Monad
 import           Control.Monad.IO.Class
 import           Data.Maybe
 import           Data.Pool
@@ -43,9 +41,9 @@ readConfig params =   ConnectInfo
 initHelper :: (Functor m, MonadIO m) => [(T.Text, T.Text)] -> m Postgres
 initHelper config = do
     conn <- maybe (fail "Invalid configuration") return $ readConfig config
-    fmap Postgres . liftIO $ createPool (connect conn) close stripes
-                                        (realToFrac (idle :: Double))
-                                        resources
+    fmap PostgresPool . liftIO $ createPool (connect conn) close stripes
+                                            (realToFrac (idle :: Double))
+                                            resources
     where stripes   = 1
           idle      = 5
           resources = 20

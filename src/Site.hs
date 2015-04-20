@@ -9,6 +9,7 @@ module Site
   ) where
 
 ------------------------------------------------------------------------------
+import           Control.Applicative
 import           Control.Monad.IO.Class
 import           Data.ByteString                             (ByteString)
 import           Snap

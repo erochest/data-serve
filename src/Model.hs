@@ -15,7 +15,6 @@ module Model
     ) where
 
 
-import           Control.Applicative
 import           Control.Lens
 import qualified Data.Text                     as T
 import           Snap.Snaplet.PostgresqlSimple

@@ -8,7 +8,7 @@ module Application where
 
 ------------------------------------------------------------------------------
 import           Control.Lens
-import           Snap                          (get)
+import           Control.Monad.State           (get)
 import           Snap.Snaplet
 import           Snap.Snaplet.Heist
 import           Snap.Snaplet.PostgresqlSimple

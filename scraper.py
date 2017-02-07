@@ -4,7 +4,10 @@
 from __future__ import unicode_literals, print_function
 
 import csv
-import urlparse
+try:
+    import urlparse
+except ImportError:
+    import urllib.parse as urlparse
 
 import cssselect
 import lxml.cssselect
@@ -71,7 +74,7 @@ def get_internet_users(base_url):
 
 def main(base_url=BASEURL, output=OUTPUT, fields=FIELDS):
     """Pull in the input from the web and write it to a file."""
-    with open(output, 'wb') as f:
+    with open(output, 'w') as f:
         writer = csv.writer(f)
         writer.writerow(fields)
         writer.writerows(get_internet_users(base_url))

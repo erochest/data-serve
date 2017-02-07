@@ -1,6 +1,6 @@
 % Introduction to Screen Scraping
 % Eric Rochester, Scholars' Lab
-% March 5, 2014
+% bit.ly/erochest-screen-scraping
 
 # About the Scholars' Lab
 
@@ -37,9 +37,9 @@ Wikipedia has a nice overview on the [Web Scraping article][legal].
 
 ## Inaccessible
 
-Looking at you, Flash
+<p class="fragment">Looking at you, Flash</p>
 
-And you, PDF
+<p class="fragment">And you, PDF</p>
 
 # Tools
 
@@ -149,7 +149,7 @@ See [the full source][source].
 * [Python Package Index][pypi] (PyPI, the collection of Python libraries)
 * [Requests][requests] library for getting web pages
 * [lxml][lxml] library for digging into web pages
-* [Web Platform][webplatform] information, references, and tutorials about the
+* [Mozilla Developer Network][mdn] information, references, and tutorials about the
   technologies that power the web.
 
 # Questions?
@@ -167,4 +167,4 @@ See [the full source][source].
 [source]: https://github.com/erochest/data-serve/blob/master/scraper.py
 [hardway]: http://learnpythonthehardway.org/
 [pypi]: https://pypi.python.org/pypi
-[webplatform]: http://www.webplatform.org/
+[mdn]: https://developer.mozilla.org/

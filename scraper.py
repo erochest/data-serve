@@ -37,45 +37,50 @@ def get_action_url(base_url, doc):
     return None
 
 
-def get_countries(base_url, doc):
+def get_countries(doc):
     """Takes the document and returns (country, country_value)."""
+    countries = []
     for select in doc.cssselect('form select'):
         if select.get('name') == COUNTRY:
             for option in select.cssselect('option'):
-                yield (option.text, option.get('value'))
+                countries.append((option.text, option.get('value')))
+    return countries
 
 
 def get_country_data(url, country_code, page=0):
     """Page through the data for one country."""
+    country_data = []
     doc = get(url, {PAGE: page, COUNTRY: country_code})
 
-    # Get the data for the current page, counting it as we go.
-    n = 0
+    # Get the data for the current page
     for table_row in doc.cssselect('table tbody tr'):
-        n += 1
-        yield tuple( td.text for td in table_row.cssselect('td') )
+        country_data.append(
+            tuple(td.text for td in table_row.cssselect('td'))
+            )
 
     # If this page has data, see if the next does too.
-    if n > 0:
-        for row in get_country_data(url, country_code, page + 1):
-            yield row
+    if country_data:
+        country_data += get_country_data(url, country_code, page + 1)
+
+    return country_data
 
 
 def get_internet_users(base_url):
     """This controls the process."""
     doc = get(base_url)
     action_url = get_action_url(base_url, doc)
-    for (country, country_code) in get_countries(base_url, doc):
+    internet_users = []
+    for (country, country_code) in get_countries(doc):
         print(country)
-        for row in get_country_data(action_url, country_code):
-            yield row
+        internet_users += get_country_data(action_url, country_code)
     print('Done')
+    return internet_users
 
 
 def main(base_url=BASEURL, output=OUTPUT, fields=FIELDS):
     """Pull in the input from the web and write it to a file."""
-    with open(output, 'w') as f:
-        writer = csv.writer(f)
+    with open(output, 'w') as file_out:
+        writer = csv.writer(file_out)
         writer.writerow(fields)
         writer.writerows(get_internet_users(base_url))
 

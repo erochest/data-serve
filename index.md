@@ -140,7 +140,9 @@ See [the full source][source].
 
 ## This Presentation (with Links)
 
-[http://www.ericrochester.com/data-serve/][this]
+* [http://www.ericrochester.com/data-serve/][this]
+* [The first example][source]
+* [An example searching Reuters][reuters]
 
 ## More Links
 
@@ -168,3 +170,4 @@ See [the full source][source].
 [hardway]: http://learnpythonthehardway.org/
 [pypi]: https://pypi.python.org/pypi
 [mdn]: https://developer.mozilla.org/
+[reuters]: https://github.com/erochest/data-serve/blob/master/reuters.py
